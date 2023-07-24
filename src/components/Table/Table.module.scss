@@ -1,0 +1,69 @@
+@import 'src/assets/styles/colors';
+
+@mixin header-cell {
+  background-color: $color-blue;
+  color: $color-white;
+  border-right: 1px solid $color-white;
+  border-left: 1px solid $color-white;
+  padding: 5.5px 16px;
+  vertical-align: middle;
+}
+
+.header {
+  &__heading {
+    &__sorted {
+      @include header-cell;
+      background-color: $color-dark-blue;
+    }
+
+    &__default {
+      @include header-cell;
+      background-color: $color-blue;
+    }
+  }
+
+  &__button {
+    background: none;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    color: $color-white;
+    text-transform: uppercase;
+
+    span {
+      padding-right: 8px;
+      font-size: 12px;
+    }
+
+    svg {
+      vertical-align: middle;
+      fill: #fff;
+      width: 12px;
+      height: auto;
+    }
+  }
+}
+
+.body {
+  &__cell {
+    padding: 18px;
+    border-bottom: 1px solid $color-blue;
+    color: $color-text-body;
+    font-size: 12px;
+    max-width: 150px;
+
+    div {
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    a {
+      color: $color-text-body;
+    }
+  }
+}
